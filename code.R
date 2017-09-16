@@ -1,7 +1,8 @@
 
 
-setwd("C:\\Users\\YeGuyu\\Downloads\\Malawi")
+setwd("P\\Malawi")
 
+#### Load packages
 package = c("maptools", "rgdal", "PBSmapping", "raster", "snow")
 lapply(package, require, character.only = TRUE)
 memory.limit(7000)
