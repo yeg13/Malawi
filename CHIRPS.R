@@ -7,20 +7,8 @@
 
 
 ##install and load required packages
-install.packages("maptools")
-install.packages("raster")
-install.packages("rasterVis")
-install.packages("RCurl")
-install.packages("R.utils")
-install.packages("rgdal")
-
-library(sp)
-library(maptools)
-library(raster)
-library(rasterVis)
-library(RCurl)
-library(R.utils)
-library(rgdal)
+packages <- c("maptools", "raster", "rasterVis", "RCurl", "R.utils", "rgdal", "sp")
+lapply(packages, require, character.only = TRUE)
 
 ##Define working directory and read vector layer
 setwd("P:\\Malawi\\CHIRPS")
