@@ -6,7 +6,7 @@
 # values in a csv file. 
 
 
-##install and load required packages
+##Install and load required packages
 packages <- c("maptools", "raster", "rasterVis", "RCurl", "R.utils", "rgdal", "sp")
 lapply(packages, require, character.only = TRUE)
 
