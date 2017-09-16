@@ -1,20 +1,18 @@
 
 
-setwd("C:\\Users\\guyuye2\\Desktop\\Malawi")
+setwd("P:\\Malawi")
 library(zoo)
-chirps_2007 <- read.csv("CHIRPS_Malawi_Mean_2007.csv")
-chirps_2008 <- read.csv("CHIRPS_Malawi_Mean_2008.csv")
-chirps_2009 <- read.csv("CHIRPS_Malawi_Mean_2009.csv")
-chirps_2010 <- read.csv("CHIRPS_Malawi_Mean_2010.csv")
-chirps_2011 <- read.csv("CHIRPS_Malawi_Mean_2011.csv")
-chirps_2012 <- read.csv("CHIRPS_Malawi_Mean_2012.csv")
-chirps_2013 <- read.csv("CHIRPS_Malawi_Mean_2013.csv")
-chirps_2014 <- read.csv("CHIRPS_Malawi_Mean_2014.csv")
-chirps_2015 <- read.csv("CHIRPS_Malawi_Mean_2015.csv")
-chirps_2016 <- read.csv("CHIRPS_Malawi_Mean_2016.csv")
 
+filenames <- list.files(getwd(),
+                       pattern = ".csv",
+                       full.names = TRUE)
 
-
+for (i in filenames){  
+   name <- gsub(".csv","",name)  
+   i <- paste(".\\",i,sep="")
+   assign(name,read.csv(i, header=FALSE)
+}
+          
 chirps_0716 <- rbind(chirps_2007, chirps_2008, chirps_2009, chirps_2010, chirps_2011, chirps_2012, chirps_2013,
                      chirps_2014, chirps_2015, chirps_2016)
 chirps_0716$Date <- seq(as.Date("2007-01-01"), as.Date("2016-12-31"), by = "days")
