@@ -1,5 +1,5 @@
 
-setwd("C:/Users/guyuye2/Downloads/malawi")
+setwd("P:\\Malawi")
 packages <- c("sp", "maptools", "raster", "RCurl", "R.utils", "rgdal", "rgeos", "data.table", "zoo")
 lapply(packages, require, character.only = TRUE)
 
