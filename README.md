@@ -1,4 +1,4 @@
-Scripts for this repo were used to explore disaster-prediction metrics. Abstract from this paper, An approach to improving 
+Scripts from this repo were used to explore disaster-prediction metrics. Abstract from this paper, An approach to improving 
 early warning systems: Using spatially and temporally rich data to predict food insecurity crises in Malawi, is as follows:
 
 "While the causes of famine are complex and include institutional failure and conflict, policymakers and
