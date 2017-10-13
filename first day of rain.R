@@ -1,4 +1,4 @@
-
+### This script extracts the date of the first day of rain in each year from 2007 to 2016.
 
 setwd("P:\\Malawi")
 library(zoo)
@@ -117,8 +117,7 @@ for (i in chirps_fall_16[2:61]){
 }
 
 
-
-
+## Combine data frames of first day of rain in each year
 first_day <- rbind(first_day_07, first_day_08, first_day_09, first_day_10, first_day_11, first_day_12, first_day_13,
                    first_day_14, first_day_15, first_day_16)
 first_day_date <- as.matrix(as.character(as.Date(first_day)))
