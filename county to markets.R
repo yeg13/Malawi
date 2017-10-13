@@ -1,12 +1,15 @@
-
+### County boundary shapefiles and market information we obtained for this research project do not align. Among all the counties
+### in Malawi, some of them have pricing (commodities like corn) information for several markets, while some do not have any within
+### their boundary. In order to accurately assess the market accessibility, I created Theissen polygons to visualize the areas within 
+### the same distance from a selected market. Then, I calculated the weights based on the proportion of each county within each market
+### polygon to bring the two unmatched spatial datasets to the same geographical level.
 
 setwd("P\\Malawi")
 
-#### Load packages
+## Load packages
 package = c("maptools", "rgdal", "PBSmapping", "raster", "snow")
 lapply(package, require, character.only = TRUE)
 memory.limit(7000)
-
 landscan_pop <- raster("LandScanData/Population/lspop2011")
 landscan_clip <- crop(landscan_pop, extent(lhz))
 landscan_clip <- mask(landscan_clip, lhz)
@@ -14,7 +17,7 @@ lhz <- readOGR(".", "livelihood_zones_split")
 markets_theissen <- readOGR(".", "Markets_Polygon_Clip")
 plot(markets_theissen)
 
-#### Define projection system ####
+## Define projection system 
 proj.latlon <- CRS("+proj=longlat +datum=WGS84")
 proj4string <- CRS("+init=epsg:20936")
 
