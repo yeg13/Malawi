@@ -1,3 +1,4 @@
+
 ### County boundary shapefiles and market information we obtained for this research project do not align. Among all the counties
 ### in Malawi, some of them have pricing (commodities like corn) information for several markets, while some do not have any within
 ### their boundary. In order to accurately assess the market accessibility and the population for each market, I created Theissen 
