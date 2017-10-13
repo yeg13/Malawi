@@ -1,9 +1,9 @@
 
-# This r.script is used to extract average monthly rainfall data for each district in Malawi.
-# Raster layers are downloaded from CHIRPS database for Africa, which incorporates 0.05 degree
-# resolution satellite imagery with in-situ situation data to create gridded rainfall time series.
-# This program downloads and unzips raster files directly, and then write the extracted average
-# values in a csv file. 
+### This r.script is used to extract average monthly rainfall data for each district in Malawi.
+### Raster layers are downloaded from CHIRPS database for Africa, which incorporates 0.05 degree
+### resolution satellite imagery with in-situ situation data to create gridded rainfall time series.
+### This program downloads and unzips raster files directly, and then write the extracted average
+### values in a csv file. 
 
 
 ##Install and load required packages
