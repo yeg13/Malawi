@@ -1,8 +1,8 @@
 ### County boundary shapefiles and market information we obtained for this research project do not align. Among all the counties
 ### in Malawi, some of them have pricing (commodities like corn) information for several markets, while some do not have any within
-### their boundary. In order to accurately assess the market accessibility, I created Theissen polygons to visualize the areas within 
-### the same distance from a selected market. Then, I calculated the weights based on the proportion of each county within each market
-### polygon to bring the two unmatched spatial datasets to the same geographical level.
+### their boundary. In order to accurately assess the market accessibility and the population for each market, I created Theissen 
+### polygons to visualize the areas within the same distance from a selected market. Then, I calculated the weights based on the 
+### proportion of each county within each market polygon to bring the two unmatched spatial datasets to the same geographical level.
 
 setwd("P\\Malawi")
 
