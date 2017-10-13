@@ -1,4 +1,6 @@
 
+### This script merges CHIRPS's rainfall data, weighted population data, IPC scores and pricing data.
+
 setwd("P:\\Malawi")
 packages <- c("sp", "maptools", "raster", "RCurl", "R.utils", "rgdal", "rgeos", "data.table", "zoo")
 lapply(packages, require, character.only = TRUE)
@@ -32,7 +34,7 @@ temp_chirp_merge <- merge(temp_chirp, link1, by = "V")
 temp_chirp_merge <- merge(temp_chirp_merge, malawi@data, by = "FNID")
 temp_chirp_merge$date_c <- as.character(temp_chirp_merge$date)
 
-#### IPC ####
+## IPC
 link2 <- temp_chirp_merge[, c("V", "FNID")]
 link2 <- unique(link2)
 ipc <- join(ipc, link2, by = "FNID", type = "left", match = "all")
@@ -62,11 +64,11 @@ ipc_long_small <- ipc_long[, c("X2","value","date")]
 colnames(ipc_long_small) <- c("V", "IPC", "date")
 ipc_long_small <- ipc_long_small[-c(2401:2440),]
 
-####Combine IPC and CHIRPS###
+## Combine IPC and CHIRPS
 ipc_chirps <- merge(ipc_long_small, temp_chirp_merge, by.x = c("V", "date"), by.y = c("V", "date_c"), all = TRUE)
 ipc_chirps$date <- NULL
 
-### Price data ###
+## Price data
 price_m <- melt(price, id = "yearmo")
 colnames(price_m) <- c("admin_name", "date", "price")
 price_m$date <- gsub("X","", price_m$date)
@@ -99,7 +101,7 @@ weighted_price <- summaryBy(agg_price~FNID+FNID_OLD+date, data = price_weights, 
 price_both <- merge(unweighted_price, weighted_price, by = c("FNID", "date"))
 
 
-### chirps weights ###
+## chirps weights
 pop_district <- weights[, c("FNID", "FNID_OLD","pop.sum")]
 pop_district <- unique(pop_district)
 pop_district$pop_weight <- pop_district$pop.sum/sum(pop_district$pop.sum, na.rm = T)
